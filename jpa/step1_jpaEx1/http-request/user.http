@@ -1,0 +1,25 @@
+### Get user(id = nhn)
+GET http://localhost:8080/users/nhn
+
+### Create user(id = nhn)
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id": "nhn",
+  "password": "academy"
+}
+
+### Get user(id = nhn)
+GET http://localhost:8080/users/nhn
+
+### Modify user(id = nhn)
+PUT http://localhost:8080/users/nhn
+Content-Type: application/json
+
+{
+  "password": "hahaha"
+}
+
+### Get user(id = nhn)
+GET http://localhost:8080/users/nhn
