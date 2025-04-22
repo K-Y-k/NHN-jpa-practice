@@ -1,5 +1,6 @@
-package com.nhnacademy.subjectweek04.order;
+package com.nhnacademy.subjectweek04.order.entity;
 
+import com.nhnacademy.subjectweek04.user.entity.Users;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -8,14 +9,15 @@ import java.time.LocalDateTime;
 
 @Getter
 @Entity
+@Table(name = "order")
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private long orderId;
 
-    @Column(nullable = false)
-    private String userId;
+    @ManyToOne(optional = false)
+    private Users user;
 
     @Column(nullable = false, length = 20)
     private OrderState orderStatus;

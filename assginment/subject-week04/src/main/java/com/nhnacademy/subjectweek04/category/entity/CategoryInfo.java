@@ -1,4 +1,4 @@
-package com.nhnacademy.subjectweek04.category;
+package com.nhnacademy.subjectweek04.category.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

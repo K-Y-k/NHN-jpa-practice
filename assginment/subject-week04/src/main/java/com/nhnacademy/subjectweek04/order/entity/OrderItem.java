@@ -1,5 +1,6 @@
-package com.nhnacademy.subjectweek04.order;
+package com.nhnacademy.subjectweek04.order.entity;
 
+import com.nhnacademy.subjectweek04.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -13,11 +14,11 @@ public class OrderItem {
     @Column(nullable = false)
     private long orderItemId;
 
-    @Column(nullable = false)
-    private long orderId;
+    @ManyToOne(optional = false)
+    private Orders order;
 
-    @Column(nullable = false)
-    private long productId;
+    @ManyToOne(optional = false)
+    private Product product;
 
     @Column(nullable = false)
     private int quantity;

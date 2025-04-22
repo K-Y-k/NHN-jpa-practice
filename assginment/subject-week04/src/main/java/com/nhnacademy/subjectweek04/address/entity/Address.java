@@ -1,5 +1,6 @@
-package com.nhnacademy.subjectweek04.address;
+package com.nhnacademy.subjectweek04.address.entity;
 
+import com.nhnacademy.subjectweek04.user.entity.Users;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -15,8 +16,8 @@ public class Address {
     @Column(nullable = false)
     private long addressId;
 
-    @Column(nullable = false, length = 50)
-    private String userId;
+    @ManyToOne(optional = false)
+    private Users user;
 
     @Column(nullable = false, length = 255)
     private String addressName;

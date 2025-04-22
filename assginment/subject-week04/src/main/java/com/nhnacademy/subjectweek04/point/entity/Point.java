@@ -1,5 +1,6 @@
-package com.nhnacademy.subjectweek04.point;
+package com.nhnacademy.subjectweek04.point.entity;
 
+import com.nhnacademy.subjectweek04.user.entity.Users;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -13,8 +14,8 @@ public class Point {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long pointId;
 
-    @Column(nullable = false)
-    private long userId;
+    @ManyToOne(optional = false)
+    private Users user;
 
     @Column(nullable = false)
     private int price;

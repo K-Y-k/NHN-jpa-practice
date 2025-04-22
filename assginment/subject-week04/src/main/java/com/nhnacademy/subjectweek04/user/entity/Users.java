@@ -1,8 +1,12 @@
-package com.nhnacademy.subjectweek04.user;
+package com.nhnacademy.subjectweek04.user.entity;
 
+import com.nhnacademy.subjectweek04.point.entity.Point;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import java.util.List;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -10,6 +14,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Entity
+@Table(name = "user")
 public class Users {
 
     @Id
@@ -35,5 +40,8 @@ public class Users {
     private LocalDateTime createdAt;
 
     private LocalDateTime latestLoginAt;
+
+    @OneToMany(mappedBy = "user")
+    private List<Point> pointList;
 
 }

@@ -1,5 +1,6 @@
-package com.nhnacademy.subjectweek04.category;
+package com.nhnacademy.subjectweek04.category.entity;
 
+import com.nhnacademy.subjectweek04.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -15,11 +16,11 @@ public class Category {
     @Column(nullable = false)
     private long categoryId;
 
-    @Column(nullable = false)
-    private long categoryInfo;
+    @ManyToOne(optional = false)
+    private CategoryInfo categoryInfo;
 
-    @Column(nullable = false)
-    private long productId;
+    @ManyToOne(optional = false)
+    private Product product;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
