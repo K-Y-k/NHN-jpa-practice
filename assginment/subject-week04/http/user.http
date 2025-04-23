@@ -1,0 +1,50 @@
+### 유저 생성1
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "userId": "test1Id",
+  "userName": "test1Name",
+  "userPassword": "test1Password",
+  "userBirth": "2012-01-03",
+  "userAuth": "ROLE_ADMIN",
+  "userPoint": 100,
+  "createdAt": "2025-04-23T14:30:00",
+  "latestLoginAt": "2025-04-23T14:30:00",
+  "pointList": []
+}
+
+### 유저 생성2
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "userId": "test2Id",
+  "userName": "test2Name",
+  "userPassword": "test2Password",
+  "userBirth": "2012-01-03",
+  "userAuth": "ROLE_ADMIN",
+  "userPoint": 2000,
+  "createdAt": "2025-04-23T14:30:00",
+  "latestLoginAt": "2025-04-23T14:30:00",
+  "pointList": []
+}
+
+
+### 유저 아이디로 해당 유저 이름만 단일 조회
+GET http://localhost:8080/user?userId=test1Id
+
+### 유저 아이디로 단일 조회
+GET http://localhost:8080/user/test1Id
+
+### 지정한 역할과 지정한 포인트 이상인 유저 리스트 조회
+GET http://localhost:8080/user/list?auth=ROLE_ADMIN&userPoint=1000
+
+### 유저 리스트 조회
+GET http://localhost:8080/user/list?auth=ROLE_ADMIN
+
+### 유저 페이징 조회
+GET http://localhost:8080/user/page?auth=ROLE_ADMIN&page=0&size=5
+
+### 유저 삭제
+DELETE http://localhost:8080/user/test1Id
