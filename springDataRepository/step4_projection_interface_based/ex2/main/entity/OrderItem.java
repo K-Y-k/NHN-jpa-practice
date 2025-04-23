@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class OrderItem {
-    // 복합 키를 사용한 경우, 하지만 인조 단일 키 방식으로 적용 권장
     @EmbeddedId
     private OrderItemPk pk;
 

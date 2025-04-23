@@ -1,0 +1,7 @@
+// TODO #2: 다음 요청을 실행해서 결과를 확인합니다.
+
+### Find all members (page = 0, size = 3)
+GET http://localhost:8080/members?page=0&size=3
+
+### Find all members (page = 1, size = 5)
+GET http://localhost:8080/members?page=1&size=5
